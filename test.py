@@ -6,7 +6,6 @@ import os
 class Register(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Chrome(os.getcwd()+"/chromedriver.exe")
-
         self.wd.maximize_window()
         self.wd.implicitly_wait(5)
     def Reg(self, name, surname, mail, phone, password, password_confirm):
@@ -48,7 +47,7 @@ class Register(unittest.TestCase):
 # Кейс на проверку количества символов в пароле
     def test_2(self):
         Register.Reg(self, name="name", surname="surname", mail=Register.Mail(),
-                     phone=Register.Phone(), password="123456a", password_confirm="123456a")
+                     phone=Register.Phone(), password="12345a", password_confirm="12345a")
         Register.Check(self, check_temp="//li[contains(text(),'The Пароль must be at least 8 characters.')]")
         Register.tearDown(self)
 
