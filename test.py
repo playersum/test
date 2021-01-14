@@ -6,6 +6,7 @@ import os
 class Register(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Chrome(os.getcwd()+"/chromedriver.exe")
+
         self.wd.maximize_window()
         self.wd.implicitly_wait(5)
     def Reg(self, name, surname, mail, phone, password, password_confirm):
